@@ -1,18 +1,132 @@
-.draggable-box {
-  position: fixed;
-  top: 100px;
-  left: 100px;
-  width: 350px;
-  min-width: 200px;
-  min-height: 150px;
-  max-width: 95vw;
-  max-height: 90vh;
-  background-color: white;
-  border: 2px solid gray;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  resize: both;
-  overflow: auto;
-  z-index: 9999;
-  padding: 10px;
-  border-radius: 10px;
+#leetcode-helper-box {
+    position:fixed; 
+    top:100px; 
+    left:100px;
+    width:330px; 
+    max-width:90vw; 
+    min-width:240px;
+    height:420px; max-height:90vh; min-height:240px;
+    display:flex; flex-direction:column;
+    background:var(--bg); color:var(--txt);
+    border:1.5px solid #aaa; border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+    resize:both; overflow:hidden; z-index:999999;
+    font-family:system-ui,Arial,sans-serif;
+  }
+ #lh-header{
+    padding:6px;
+    display:flex; 
+    width: 100%;
+    justify-content: space-between;
+    gap:6px; 
+    cursor:grab;
+    background:var(--bg);
+     color:var(--txt);
+    user-select:none;
+    border-bottom:1px solid #ccc;
+    border-radius: 6px 6px 0 0;
+}
+#lh-header select {
+  padding: 4px 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background:var(--bg);
+  color:var(--txt);
+  font-size: 14px;
+  cursor: pointer;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+#lh-header select:hover {
+  border-color: #888;
+  background-color: #f8f8f8;
+}
+
+#lh-header select:focus {
+  outline: none;
+  border-color: #555;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+#lh-chat{
+    flex:1;  
+    overflow-y:auto;
+    padding:10px;
+    display:flex; 
+    flex-direction:column; 
+    gap:8px;
+}
+.lh-bubble{
+    padding:8px 10px; border-radius:10px; max-width:85%;
+    word-wrap:break-word; white-space:pre-wrap; font-size:14px;
+}
+.user{ 
+  align-self:flex-end; 
+  background:var(--bubble-user) 
+}
+.model  { 
+  align-self:flex-start; 
+  background:var(--bubble-ai) 
+}
+#lh-form{ 
+  display:flex; 
+  gap:6px; 
+  padding:8px 
+}
+#lh-form input{
+  flex:1; 
+  padding:6px 8px; 
+  border:1px solid #ccc;
+  border-radius:6px; 
+  background:inherit; 
+  color:inherit
+}
+#lh-form button{
+  border:none;
+  background:none;
+  cursor:pointer;
+}
+
+
+
+:root{
+  --bg: #ffffff;
+  --bubble-user:  #d1f1d1; 
+  --bubble-ai: #f1f1f1;
+  --txt: #000
+}
+
+#result-text { 
+  max-height: 250px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+.bg-black {
+    --bg:#121212; 
+    --txt:#eee;
+    --bubble-user:#285842; 
+    --bubble-ai:#2f2f2f; 
+}
+.bg-transparent {
+  --bg: transparent;
+  --txt:#000;
+  --bubble-user:rgba(209,241,209,.9);
+  --bubble-ai :rgba(241,241,241,.9);
+}
+.bg-white   { 
+  --bg:#ffffff; 
+  --bubble-user:#2d7d6e; 
+  --bubble-ai:#333 
+}
+
+.font-white {
+   --txt:#fff 
+}
+.font-black { 
+  --txt:#000
 }
